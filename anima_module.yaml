@@ -1,0 +1,16 @@
+name: vis_forestsim
+codename: VIS-FORESTSIM
+domain: vision
+entrypoints:
+  predict: src/anima_vis_forestsim/infer/cli.py
+  serve: src/anima_vis_forestsim/serve.py
+  export: src/anima_vis_forestsim/export.py
+runtime:
+  python: "3.11"
+  package_manager: uv
+  backends:
+    - mlx
+    - cuda
+paper:
+  arxiv: "2603.27923"
+  title: "ForestSim: A Synthetic Benchmark for Intelligent Vehicle Perception in Unstructured Forest Environments"

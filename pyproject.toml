@@ -3,20 +3,52 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "anima-kodama"
+name = "anima-vis-forestsim"
 version = "0.1.0"
-description = "ANIMA KODAMA — ForestSim: Off-Road Segmentation Benchmark"
-requires-python = ">=3.10"
+description = "ANIMA VIS-FORESTSIM — ForestSim benchmark reproduction and deployment"
+requires-python = ">=3.11,<3.12"
 dependencies = [
     "torch>=2.0",
-    "numpy",
-    "opencv-python",
+    "numpy>=1.26",
+    "opencv-python>=4.10",
+    "pillow>=10.0",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.2",
+    "typer>=0.12",
 ]
 
 [project.optional-dependencies]
-mlx = ["mlx>=0.10", "mlx-nn"]
-dev = ["pytest", "ruff", "mypy"]
+mlx = ["mlx>=0.22"]
+serve = [
+    "fastapi>=0.111",
+    "httpx>=0.28",
+    "python-multipart>=0.0.9",
+    "uvicorn>=0.30",
+]
+train = [
+    "mmcv-lite>=2.1",
+    "mmdet>=3.3",
+    "mmengine>=0.10",
+    "mmsegmentation>=1.2",
+    "orjson>=3.10",
+    "pandas>=2.2",
+    "pillow>=10.0",
+    "tabulate>=0.9",
+    "typer>=0.12",
+]
+cuda = [
+    "nvidia-ml-py>=12.560",
+    "orjson>=3.10",
+    "tensorboard>=2.18",
+]
+dev = ["pytest>=8.3", "ruff>=0.11", "mypy>=1.15", "fastapi>=0.111", "httpx>=0.28"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anima_vis_forestsim", "src/anima_kodama"]

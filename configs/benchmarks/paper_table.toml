@@ -1,0 +1,155 @@
+[m1]
+label = "PSPNet-R50"
+family = "pspnet"
+backbone = "resnet50v1c"
+decoder = "psp_head"
+pretrained_source = "torchvision://resnet50"
+config_path = "repositories/ForestSim/configs/pspnet/pspnet_r50-d8_4xb4-40k_forestsim_all-512x512.py"
+checkpoint_name = "m1_pspnet_r50.pth"
+paper_miou = 61.64
+paper_aacc = 89.85
+paper_macc = 72.14
+
+[m2]
+label = "DeepLabV3-R50"
+family = "deeplabv3"
+backbone = "resnet50v1c"
+decoder = "aspp_head"
+pretrained_source = "torchvision://resnet50"
+config_path = "repositories/ForestSim/configs/deeplabv3/deeplabv3_r50-d8_4xb4-160k_forestsim_all-512x512.py"
+checkpoint_name = "m2_deeplabv3_r50.pth"
+paper_miou = 61.87
+paper_aacc = 89.91
+paper_macc = 72.81
+
+[m3]
+label = "DeepLabV3-R101"
+family = "deeplabv3"
+backbone = "resnet101v1c"
+decoder = "aspp_head"
+pretrained_source = "torchvision://resnet101"
+config_path = "repositories/ForestSim/configs/deeplabv3/deeplabv3_r101-d8_4xb4-160k_forestsim_all-512x512.py"
+checkpoint_name = "m3_deeplabv3_r101.pth"
+paper_miou = 62.81
+paper_aacc = 89.86
+paper_macc = 73.13
+
+[m4]
+label = "DeepLabV3+-R50"
+family = "deeplabv3plus"
+backbone = "resnet50v1c"
+decoder = "depthwise_aspp_head"
+pretrained_source = "torchvision://resnet50"
+config_path = "repositories/ForestSim/configs/deeplabv3plus/deeplabv3plus_r50-d8_4xb4-40k_forestsim_all-512x512.py"
+checkpoint_name = "m4_deeplabv3plus_r50.pth"
+paper_miou = 59.16
+paper_aacc = 89.31
+paper_macc = 72.93
+
+[m5]
+label = "DeepLabV3+-R101"
+family = "deeplabv3plus"
+backbone = "resnet101v1c"
+decoder = "depthwise_aspp_head"
+pretrained_source = "torchvision://resnet101"
+config_path = "repositories/ForestSim/configs/deeplabv3plus/deeplabv3plus_r101-d8_4xb4-40k_forestsim_all-512x512.py"
+checkpoint_name = "m5_deeplabv3plus_r101.pth"
+paper_miou = 59.22
+paper_aacc = 88.32
+paper_macc = 69.56
+
+[m6]
+label = "SegFormer-B0"
+family = "segformer"
+backbone = "mit_b0"
+decoder = "segformer_head"
+pretrained_source = "https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segformer/mit_b0_20220624-7e0fe6dd.pth"
+config_path = "repositories/ForestSim/configs/segformer/segformer_mit-b0_8xb2-160k_forestsim_all-512x512.py"
+checkpoint_name = "m6_segformer_b0.pth"
+paper_miou = 61.82
+paper_aacc = 90.52
+paper_macc = 71.12
+
+[m7]
+label = "SegFormer-B5"
+family = "segformer"
+backbone = "mit_b5"
+decoder = "segformer_head"
+pretrained_source = "https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segformer/mit_b5_20220624-658746d9.pth"
+config_path = "repositories/ForestSim/configs/segformer/segformer_mit-b5_8xb2-160k_forestsim_all-512x512.py"
+checkpoint_name = "m7_segformer_b5.pth"
+paper_miou = 67.93
+paper_aacc = 92.05
+paper_macc = 76.42
+
+[m8]
+label = "Mask2Former-R50"
+family = "mask2former"
+backbone = "resnet50"
+decoder = "mask2former_head"
+pretrained_source = "torchvision://resnet50"
+config_path = "repositories/ForestSim/configs/mask2former/mask2former_r50_8xb2-160k_forestsim_all-512x512.py"
+checkpoint_name = "m8_mask2former_r50.pth"
+paper_miou = 67.48
+paper_aacc = 91.34
+paper_macc = 75.77
+
+[m9]
+label = "Mask2Former-R101"
+family = "mask2former"
+backbone = "resnet101"
+decoder = "mask2former_head"
+pretrained_source = "torchvision://resnet101"
+config_path = "repositories/ForestSim/configs/mask2former/mask2former_r101_8xb2-160k_forestsim_all-512x512.py"
+checkpoint_name = "m9_mask2former_r101.pth"
+paper_miou = 65.80
+paper_aacc = 91.29
+paper_macc = 74.61
+
+[m10]
+label = "Mask2Former-Swin-B"
+family = "mask2former"
+backbone = "swin_b"
+decoder = "mask2former_head"
+pretrained_source = "https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/swin/swin_base_patch4_window12_384_20220317-55b0104a.pth"
+config_path = "repositories/ForestSim/configs/mask2former/mask2former_swin-b-in1k-384x384-pre_8xb2-160k_forestsim_all-640x640.py"
+checkpoint_name = "m10_mask2former_swin_b.pth"
+paper_miou = 74.50
+paper_aacc = 92.57
+paper_macc = 82.30
+
+[m11]
+label = "Mask2Former-Swin-L"
+family = "mask2former"
+backbone = "swin_l"
+decoder = "mask2former_head"
+pretrained_source = "https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/swin/swin_large_patch4_window12_384_22k_20220412-6580f57d.pth"
+config_path = "repositories/ForestSim/configs/mask2former/mask2former_swin-l-in22k-384x384-pre_8xb2-160k_forestsim_all-640x640.py"
+checkpoint_name = "m11_mask2former_swin_l.pth"
+paper_miou = 75.31
+paper_aacc = 92.65
+paper_macc = 82.68
+
+[m12]
+label = "Mask2Former-Swin-T"
+family = "mask2former"
+backbone = "swin_t"
+decoder = "mask2former_head"
+pretrained_source = "https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/swin/swin_tiny_patch4_window7_224_20220317-1cdeb081.pth"
+config_path = "repositories/ForestSim/configs/mask2former/mask2former_swin-t_8xb2-160k_forestsim_all-512x512.py"
+checkpoint_name = "m12_mask2former_swin_t.pth"
+paper_miou = 70.46
+paper_aacc = 92.14
+paper_macc = 79.79
+
+[m13]
+label = "Mask2Former-Swin-S"
+family = "mask2former"
+backbone = "swin_s"
+decoder = "mask2former_head"
+pretrained_source = "https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/swin/swin_small_patch4_window7_224_20220317-7ba6d6dd.pth"
+config_path = "repositories/ForestSim/configs/mask2former/mask2former_swin-s_8xb2-160k_forestsim_all-512x512.py"
+checkpoint_name = "m13_mask2former_swin_s.pth"
+paper_miou = 74.02
+paper_aacc = 92.39
+paper_macc = 81.39

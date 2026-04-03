@@ -19,18 +19,26 @@ This project covers exactly one paper: ForestSim: A Synthetic Benchmark for Inte
 
 ## 3. Current Status
 - **Date**: 2026-04-03
-- **Phase**: PRD scaffolded
-- **MVP Readiness**: 15%
+- **Phase**: Prebuild scaffold in progress
+- **MVP Readiness**: 45%
 - **Accomplished**:
   1. Local paper PDF reviewed
   2. Reference repository inspected
   3. `ASSETS.md`, `PIPELINE_MAP.md`, `prds/`, and `tasks/` plan created
+  4. PRD-01 foundation implemented and validated on Python 3.11
+  5. PRD-02 paper-table registry, family specs, config emission, and checkpoint resolution scaffolded
+  6. PRD-03 predictor, overlay, CLI, and prebuild fallback path scaffolded
+  7. PRD-04 metrics, eval runner, and Table I delta report scaffolded
+  8. PRD-05 API, `anima_module.yaml`, and Docker serving assets scaffolded
+  9. PRD-07 artifact manifest, runtime checks, and validation report template scaffolded
 - **TODO**:
   1. Stage ForestSim raw dataset locally
   2. Stage pretrained checkpoints locally
-  3. Implement PRD-01 foundation and ontology reconciliation
+  3. Replace deterministic prebuild predictor fallback with real checkpoint execution
   4. Run the reference benchmark path on at least one paper model
-  5. Begin Table I reproduction in ANIMA code
+  5. Begin Table I reproduction on staged data and checkpoints
+  6. Add dataset split readers / conversion scripts and real benchmark sweep wiring
+  7. Build ROS2 integration and production export around validated inference
 - **Blockers**:
   1. Dataset archive not yet staged locally
   2. Pretrained checkpoints not yet staged locally
@@ -57,3 +65,4 @@ Shared storage target:
 | Date | Agent | What Happened |
 |------|-------|---------------|
 | 2026-04-03 | Codex | Read paper and reference repo, generated PRD suite and tasks |
+| 2026-04-03 | Codex | Implemented and validated prebuild scaffold for foundation, registry, inference, API, evaluation, runtime checks, and container/module manifests on Python 3.11 |

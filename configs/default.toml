@@ -1,19 +1,27 @@
 [project]
-name = "anima-kodama"
-codename = "KODAMA"
+name = "anima-vis-forestsim"
+codename = "VIS-FORESTSIM"
 functional_name = "VIS-forestsim"
 wave = 7
 paper_arxiv = "2603.27923"
+python_version = "3.11"
 
 [compute]
 backend = "auto"  # "mlx", "cuda", "auto"
 precision = "fp32"
+default_ontology = "forestsim24"
 
 [data]
-shared_volume = "/Volumes/AIFlowDev/RobotFlowLabs/datasets"
+shared_volume = "/Volumes/AIFlowDev/RobotFlowLabs"
 repos_volume = "/Volumes/AIFlowDev/RobotFlowLabs/repos/wave7"
+server_data_root = "/mnt/forge-data"
+server_artifacts_root = "/mnt/artifacts-datai"
 
 [hardware]
 zed2i = true
 unitree_l2_lidar = true
 cobot_xarm6 = false  # Set true when purchased
+
+[dependencies]
+cuda_enabled = true
+mlx_enabled = true

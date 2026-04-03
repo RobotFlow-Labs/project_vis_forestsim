@@ -1,4 +1,3 @@
-"""ANIMA KODAMA — ForestSim: Off-Road Segmentation Benchmark"""
-from .version import __version__
+"""Compatibility shim for the previous package name."""
 
-__all__ = ["__version__"]
+from anima_vis_forestsim import *  # noqa: F403

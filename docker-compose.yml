@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  vis-forestsim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ANIMA_BACKEND: "${ANIMA_BACKEND:-cpu}"
+    ports:
+      - "8000:8000"
+    volumes:
+      - "${FORESTSIM_MODELS:-/mnt/forge-data/models}:/models:ro"
+      - "${FORESTSIM_DATASETS:-/mnt/forge-data/datasets}:/datasets:ro"
