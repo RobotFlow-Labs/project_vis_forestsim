@@ -1,58 +1,59 @@
-# KODAMA — Execution Ledger
+# VIS-FORESTSIM — Execution Ledger
 
-Resume rule: Read this file COMPLETELY before writing any code.
-This project covers exactly ONE paper: ForestSim: Off-Road Segmentation Benchmark.
+Resume rule: Read this file completely before writing code.
+This project covers exactly one paper: ForestSim: A Synthetic Benchmark for Intelligent Vehicle Perception in Unstructured Forest Environments.
 
 ## 1. Working Rules
-- Work only inside `project_kodama/`
-- This wave has 17 parallel projects, 17 papers, 17 agents
-- Prefix every commit with `[KODAMA]`
-- Stage only `project_kodama/` files
-- VERIFY THE PAPER BEFORE BUILDING ANYTHING
+- Work only inside `project_vis_forestsim/`
+- Prefix commits with `[VIS-FORESTSIM]`
+- Stage only `project_vis_forestsim/` files
+- Verify ontology, split logic, and config class counts before training anything
 
 ## 2. The Paper
-- **Title**: ForestSim: Off-Road Segmentation Benchmark
+- **Title**: ForestSim: A Synthetic Benchmark for Intelligent Vehicle Perception in Unstructured Forest Environments
 - **ArXiv**: 2603.27923
 - **Link**: https://arxiv.org/abs/2603.27923
 - **Repo**: https://github.com/pragatwagle/ForestSim
 - **Compute**: GPU-NEED
-- **Verification status**: ArXiv ID ✅ | Repo ✅ | Paper read ⬜
+- **Verification status**: ArXiv ID ✅ | Repo ✅ | Paper read ✅ | Benchmark table extracted ✅
 
 ## 3. Current Status
 - **Date**: 2026-04-03
-- **Phase**: Scaffold (just created)
-- **MVP Readiness**: 5%
-- **Accomplished**: Project scaffolded with standard structure
+- **Phase**: PRD scaffolded
+- **MVP Readiness**: 15%
+- **Accomplished**:
+  1. Local paper PDF reviewed
+  2. Reference repository inspected
+  3. `ASSETS.md`, `PIPELINE_MAP.md`, `prds/`, and `tasks/` plan created
 - **TODO**:
-  1. Download paper PDF
-  2. Clone reference repo to /Volumes/AIFlowDev/RobotFlowLabs/repos/wave7
-  3. Read paper thoroughly
-  4. Fill in CLAUDE.md core method / what we take / skip / adapt
-  5. Fill in PRD.md sections 1, 3-6, 8-11
-  6. Run reference demo/inference
-  7. Begin Phase 1 verification
-- **Blockers**: None
+  1. Stage ForestSim raw dataset locally
+  2. Stage pretrained checkpoints locally
+  3. Implement PRD-01 foundation and ontology reconciliation
+  4. Run the reference benchmark path on at least one paper model
+  5. Begin Table I reproduction in ANIMA code
+- **Blockers**:
+  1. Dataset archive not yet staged locally
+  2. Pretrained checkpoints not yet staged locally
 
 ## 4. Datasets
-### Required for this paper
+
 | Dataset | Size | URL | Format | Phase Needed |
 |---------|------|-----|--------|-------------|
-| (TODO after reading paper) | — | — | — | Phase 1 |
+| ForestSim raw | 2094 pairs | https://vailforestsim.github.io/ | RGB PNG + segmentation PNG | Phase 1 |
+| ForestSim 24-class processed | derived | local conversion | MMSeg-style images + masks | Phase 1 |
+| ForestSim 6-class grouped | derived | local conversion | traversability masks | Phase 1 |
 
-### Check shared volume first
-/Volumes/AIFlowDev/RobotFlowLabs/datasets
+Shared storage target:
 
-### Download
-`bash scripts/download_data.sh`
+`/mnt/forge-data/datasets/vision/forestsim/`
 
 ## 5. Hardware
-- ZED 2i stereo camera: Available
-- Unitree L2 3D LiDAR: Available
-- xArm 6 cobot: Pending purchase
-- Mac Studio M-series: MLX dev
-- 8x RTX 6000 Pro Blackwell: GCloud
+- Mac Studio M-series: local editing and smoke-test inference
+- Remote CUDA box or cluster: benchmark training and full reproduction
+- Paper training reference: 4 nodes x 4 NVIDIA A100 GPUs
 
 ## 6. Session Log
+
 | Date | Agent | What Happened |
 |------|-------|---------------|
-| 2026-04-03 | ANIMA Research Agent | Project scaffolded |
+| 2026-04-03 | Codex | Read paper and reference repo, generated PRD suite and tasks |
